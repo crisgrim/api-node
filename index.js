@@ -1,11 +1,12 @@
+// Get config
 require('dotenv').config()
-// Connect to mongoDB
-require('./mongo')
+// Connect to db
+require('./services/db')
 
 const express = require('express')
-const logger = require('./loggerMiddleware')
 const cors = require('cors')
 const Note = require('./models/Note')
+const logger = require('./middleware/logger')
 const handleErrors = require('./middleware/handleErrors')
 const notFound = require('./middleware/notFound')
 
