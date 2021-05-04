@@ -1,9 +1,10 @@
 # Node API
 
 Repository to create an API with Node.js deployed on Heroku.
+
 Use Mongo and Mongoose to persist the information in a database.
 
-This API includes some methods:
+This API includes some **methods**:
 
 - GET - All list
 - GET - An element by id
@@ -11,7 +12,7 @@ This API includes some methods:
 - PUT - Edit an element
 - DELETE - An element by id
 
-And some middlewares to control each request:
+And some **middlewares** to control each request:
 
 - handleErrors - Control specific errors
 - logger - Log information about the request
