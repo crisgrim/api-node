@@ -11,4 +11,12 @@ const initialNotes = [
     }
 ]
 
-module.exports = { initialNotes }
+const initialUsers = [
+    {
+        username: 'crisroot',
+        name: 'Cris',
+        passwordHash: 'test'
+    }
+]
+
+module.exports = { initialNotes, initialUsers }

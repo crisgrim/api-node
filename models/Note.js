@@ -3,7 +3,11 @@ const { model, Schema } = require('mongoose')
 const noteSchema = new Schema({
     content: String,
     date: Date,
-    important: Boolean
+    important: Boolean,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 })
 
 // Modify object that will be returned
@@ -11,7 +15,7 @@ noteSchema.set('toJSON', {
     transform: (document, returnedObject) => {
         returnedObject.id = returnedObject._id
         delete returnedObject._id
-        delete returnedObject._v
+        delete returnedObject.__v
     }
 })
 
