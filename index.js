@@ -6,13 +6,13 @@ require('./services/db')
 const express = require('express')
 const cors = require('cors')
 const Note = require('./models/Note')
-const logger = require('./middleware/logger')
-const handleErrors = require('./middleware/handleErrors')
-const notFound = require('./middleware/notFound')
+const logger = require('./middlewares/logger')
+const handleErrors = require('./middlewares/handleErrors')
+const notFound = require('./middlewares/notFound')
 
 const app = express()
 
-/* middleware */
+// middlewares
 app.use(express.json())
 app.use(logger)
 app.use(cors())
@@ -92,6 +92,8 @@ app.use(handleErrors)
 
 const PORT = process.env.PORT
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`)
 })
+
+module.exports = { app, server }
