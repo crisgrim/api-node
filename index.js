@@ -10,6 +10,7 @@ const cors = require('cors')
 const logger = require('./middlewares/logger')
 const handleErrors = require('./middlewares/handleErrors')
 const notFound = require('./middlewares/notFound')
+const loginRouter = require('./controllers/login')
 const notesRouter = require('./controllers/notes')
 const usersRouter = require('./controllers/users')
 
@@ -22,6 +23,7 @@ app.use(cors())
 app.use('/images', express.static('images'))
 
 // Routes
+app.use('/api/login', loginRouter)
 app.use('/api/notes', notesRouter)
 app.use('/api/users', usersRouter)
 
